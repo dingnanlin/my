@@ -1,0 +1,11 @@
+<view class="my-custom-component-header">
+  <view class="backIcon">
+    <!-- <icon type="" size="16" color="green" /> -->
+  </view>
+  <view> 
+    <text>{{headerText}}</text>
+  </view>
+  <view class="content">
+    <slot></slot>
+  </view>
+</view>

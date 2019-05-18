@@ -1,0 +1,26 @@
+<view class="payWaitBox">
+  <view tt:for="{{showList}}" class="payWaitItem">
+    <view class="payWaitImage">
+      <image src="{{item.imgUrl}}" mode="" />
+    </view>
+    <view class="payWaitContent">
+      <view class="payWaitTitle">
+        商品名：{{item.title}}
+      </view>
+      <view class="payWaitMoney">
+        总计：￥{{item.price*item.numbers}}
+      </view>
+      <view class="payWaitNumber">
+        数量：{{item.numbers}}
+      </view>
+    </view>
+    <view class="payWaitSearch">
+      <label class="checkbox">
+        <checkbox value="cb" checked="{{isChecked}}"/>
+      </label>
+    </view>
+  </view>
+  <view class="toPay">
+    <button class="toPayButton active" bindtap="defaultTap" :class="{{isClicked?'toPayButton active':'toPayButton'}}"> 去结算 </button>
+  </view>
+</view>

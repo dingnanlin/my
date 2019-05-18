@@ -1,0 +1,14 @@
+ {
+   "window":{
+    "backgroundTextStyle":"light",
+    "navigationBarBackgroundColor": "",
+    "navigationBarTitleText": "Hello",
+    "navigationBarTextStyle":"black"
+    },
+    "usingComponents": {
+      "my-paywait": "/component/home/payWait/payWait",
+      "my-goodswait": "/component/home/goodsWait/goodsWait",
+      "my-makewait": "/component/home/makeWait/makeWait",
+      "my-appraisewait": "/component/home/appraiseWait/appraiseWait"
+    }
+  }

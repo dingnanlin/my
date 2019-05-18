@@ -1,0 +1,150 @@
+/* pages/details/details.ttss */
+.proInfoPage{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    padding: 20rpx;
+}
+.proImgBox{
+    width: 100%;
+    height: 500rpx;
+    padding: 10rpx;
+    background: #25A7FF;
+    box-shadow: 1px 2px 5px #ccc;
+}
+.proImgBox image{
+    width: 100%;
+    height: 100%;
+}
+.proTextTitle{
+    font-size: 34rpx;
+    font-weight: bold;
+    padding: 20rpx 0rpx;
+}
+.proComment{
+    
+}
+.proIntroduce{
+    padding: 20rpx;
+    border: solid 1px #ccc;
+    line-height: 40rpx;
+    color: #aaa;
+    margin-top: 20rpx;
+    box-shadow: 1px 2px 5px #ccc;
+}
+.proInfoNumberBox{
+    /* border: solid 1px #ccc; */
+    /* height: 200rpx; */
+    display: flex;
+    /* flex-direction: row-reverse; */
+    padding-top: 30rpx;
+}
+.proInfoPrice{
+    width: 70%;
+    font-size: 36rpx;
+    font-weight: bold;
+    color: #ED4A4B;
+}
+.proInfoNumberGroup{
+    width: 30%;
+    display: flex;
+}
+.NumberBtn,.Number{
+    width: 50rpx;
+    height: 50rpx;
+    border-radius: 50%;
+    line-height: 50rpx;
+    text-align: center;   
+}
+.addBtn{
+    background:#25A7FF;
+    color: #fff;
+    font-size: 32rpx; 
+}
+.subBtn{
+    border: solid 1px #25A7FF;
+    font-size: 32rpx;
+    line-height: 40rpx; 
+}
+.Number{
+    width: 40rpx;
+    height: 40rpx;
+}
+.bottomBox{
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 120rpx;
+}
+.msg{
+    height: 30%;
+    background:#fcfdc2;
+    border: solid 1px #fbff04;
+    text-align: center;
+    line-height: 40rpx;
+}
+.settle{
+    height: 70%;
+    background: #ddd;
+    display: flex;
+}
+.carBox{
+    position: relative;
+    width: 90rpx;
+    height: 90rpx;
+    background: #999;
+    top: -20rpx;
+    left: 60rpx;
+    border-radius: 50%; 
+    /* overflow: hidden;    */
+    padding: 10rpx;
+}
+.carBox .carIcon{
+    width: 100%;
+    height: 100%;
+    padding: 15rpx;
+    border-radius: 50%; 
+}
+.carBox .carIcon image{
+    width: 100%;
+    height: 100%;
+}
+.priceTotal{
+    width: 60%;
+    /* background: red; */
+    height: 100%;
+    padding-left: 10%;
+    font-size: 36rpx;
+    color: #ED4A4B;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+.setBtn{
+    width: 30%;
+    height: 100%;
+    text-align: center;
+    font-size: 32rpx;
+    background: #25A7FF;
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+.blueColor{
+    background:#25A7FF;
+}
+.numIcon{
+    width: 40rpx;
+    height: 40rpx;
+    background: red;
+    position: absolute;
+    top: -10rpx;
+    right: -10rpx;
+    border-radius: 50%;
+    color: #fff;
+    font-weight: bold;
+    line-height: 40rpx;
+    text-align: center;
+}

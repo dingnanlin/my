@@ -1,0 +1,11 @@
+{
+  "usingComponents": {
+    "my-component": "/component/header/header"
+  },
+  "window":{
+    "backgroundTextStyle":"black",
+    "navigationBarBackgroundColor": "#ccc",
+    "navigationBarTitleText": "List",
+    "navigationBarTextStyle":"black"
+  }
+}

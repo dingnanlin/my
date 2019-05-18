@@ -1,0 +1,34 @@
+<!-- <template is="header" data="item"/> -->
+<view class="index" onPageScroll="scroll">
+  <view  class="header" :class="{{headerPosition?'headerFilex':''}}">
+    <my-component header-text="{{headerTitle}}"></my-component>
+  </view>    
+  <view class="content">
+    <!-- 轮播 -->
+    <view class="swiper">
+      <swiper indicator-dots="{{indicatorDots}}"
+        autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}" class="swiperBox">
+        <block tt:for="{{imgUrls}}" class="swipetList">
+          <swiper-item class="swiperItem">
+            <view class="swiperitem">
+              <image src="{{item.imgUrl}}" mode="" title="item.title"/>
+            </view>
+          </swiper-item>
+        </block>
+      </swiper> 
+    </view>
+    <!-- 商品展示 -->
+    <view class="cardBox" tt:for="{{cardList}}" data-alpha-beta="{{item.pid}}" bindtap="toDetails">
+      <view class="cardItem">
+        <view class="imgBox">
+          <image src="{{item.imgUrl}}" mode="" />
+        </view>
+        <view class="textBox">
+          <text class="proTitle">{{item.title}}</text>
+          <text class="proPrice">￥{{item.price}}</text>
+          <text class="proText">{{item.text}}</text>
+        </view>
+      </view>
+    </view>
+  </view>
+</view> 

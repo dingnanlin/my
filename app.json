@@ -1,0 +1,42 @@
+{
+  "pages":[
+    "pages/hellow/hellow",
+    "pages/index/index",
+    "pages/index/details/details",
+    "pages/list/list",
+    "pages/home/home",
+    "pages/home/login/login",
+    "pages/shoppingCar/shoppingCar"
+  ],
+  "window":{
+    "backgroundTextStyle":"light",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "欢迎来到我的DEMO",
+    "navigationBarTextStyle":"black"
+  },
+  "tabBar": {
+    "list": [{
+      "pagePath": "pages/index/index",
+      "text": "首页",
+      "iconPath": "./public/image/icon/home.png",
+      "selectedIconPath": "./public/image/icon/home1.png"
+    }, {
+      "pagePath": "pages/list/list",
+      "text": "列表",
+      "iconPath": "./public/image/icon/caidan.png",
+      "selectedIconPath": "./public/image/icon/caidan1.png"
+    },{
+      "pagePath": "pages/home/home",
+      "text": "个人中心",
+      "iconPath": "./public/image/icon/person.png",
+      "selectedIconPath": "./public/image/icon/person1.png"
+    }, 
+     {
+      "pagePath": "pages/shoppingCar/shoppingCar",
+      "text": "购物车",
+      "iconPath": "./public/image/icon/shoppingcar.png",
+      "selectedIconPath": "./public/image/icon/shoppingcar1.png"
+    }
+    ]
+  }
+}

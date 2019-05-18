@@ -1,0 +1,29 @@
+<view class="appraiseWaitBox">
+  <view tt:for="{{showList}}">
+    <view class="orderPage">
+      <view class="orderItem orderItemBox orderName">
+        商品名称：{{item.title}}
+      </view>
+      <view class="orderItem orderItemBox orderNumber">
+        购买数量：{{item.numbers}}
+      </view>
+      <view class="orderItem orderItemBox orderPriceTotal">
+        价格总计：{{item.numbers*item.price}}
+      </view>    
+      <view class="orderItem orderItemBox gouMaiLiang">
+        购买量：{{item.salesVolume}}份/月
+      </view>
+      <view class="orderItem orderItemBox haoPingLv">
+        好评率：{{item.favorableRate}}
+      </view>
+      <view class="orderItem orderBtnBox">
+        <view class="agrinOrder">
+          再来一单
+        </view>
+        <view class="toApprais">
+          去评价
+        </view>
+      </view>
+    </view>
+  </view>
+</view>

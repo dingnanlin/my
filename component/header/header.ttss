@@ -1,0 +1,12 @@
+/* component/header/header.ttss */
+.my-custom-component-header{
+    width: 100%;
+    height: 80rpx;
+    background: #007ACC;
+    display: flex;
+    justify-content: space-around;
+    justify-items: center;
+    line-height:80rpx;
+    color: #fff;
+    font-size: 34rpx;
+}

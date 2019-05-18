@@ -1,0 +1,23 @@
+<view class="goodsWaitBox">
+  <view class="goodsWaitItem" tt:for="{{showList}}">
+    <view class="goodsWaitItemBox">
+      <view class="itemBoxLeft">
+        <view class="itemBox">
+          商品名称：{{item.title}}
+        </view>
+        <view class="itemBox">
+          数量：{{item.numbers}}
+        </view>
+        <view class="itemBox">
+          发货地址：{{item.addrThis}}
+        </view>
+        <view class="itemBox">
+          收货地址：{{item.addr}}
+        </view>
+      </view>
+      <view class="itemBoxRight">
+        <view class="lookDetail"> 查看详情 </view>
+      </view>                  
+    </view>
+  </view>
+</view>

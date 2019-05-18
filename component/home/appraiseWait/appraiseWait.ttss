@@ -1,0 +1,22 @@
+/* pages/home/template/appraiseWait/appraiseWait.ttss */
+.orderPage{
+    border: solid 1px #ccc;
+    padding: 20rpx;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    height: 300rpx;
+    margin-bottom: 20rpx;
+}
+.orderBtnBox{
+    display: flex;
+    /* flex-direction: column; */
+    justify-content: space-between;
+    text-align: left;    
+}
+.agrinOrder{
+    color:#26B4FF; 
+}
+.toApprais{
+    color: #ED4A4B;
+}

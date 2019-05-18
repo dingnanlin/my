@@ -1,0 +1,23 @@
+<view class="makeWaitBox">
+  <view tt:for="{{showList}}" class="makeWaitList">
+    <view class="makeWaitItem" style="background:url({{item.imgUrl}});background-size: 100% 100%">
+      <view class="makeWaitShade">
+        <view class="cardName">
+          {{item.title}}
+        </view>
+        <view class="cardDetails">
+          {{item.text}}
+        </view>
+        <view class="cardDeta">
+          截止日期：{{item.exceed}}
+        </view>
+        <view class="cardTouse">
+          <view class="cardTouseBtn">
+            去使用
+          </view>
+        </view>
+      </view>
+    </view>
+    
+  </view>
+</view>

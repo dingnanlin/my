@@ -1,0 +1,60 @@
+/* template/payWait/payWait.ttss */
+.payWaitBox{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+}
+.payWaitItem{
+    width: 100%;
+    display: flex;
+    /* border: solid 1px #ccc; */
+    border: solid 1px #ccc;   
+    box-shadow: 1px 1px 5px #999;
+    border-radius: 10rpx;
+    margin: 10rpx 0;
+    overflow: hidden;
+    height: 200rpx;
+    justify-content: space-between;
+}
+.payWaitImage{
+    height: 100%;
+    width: 200rpx;
+    padding: 40rpx;
+    box-sizing: border-box;
+}
+.payWaitImage image{
+    width: 100%;
+    height: 100%;
+    border:solid 1px #ccc;
+}
+.payWaitContent{
+    /* border:solid 1px #ccc; */
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    padding: 20rpx 0;
+    justify-content: space-around;
+    color: #999;
+}
+.payWaitSearch{
+    width: 15%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+.toPay{
+    width: 600rpx;
+    display: flex;
+    flex-direction: row-reverse;
+}
+.toPayButton{
+    width: 100%;
+    height: 70rpx;
+    font-size: 28rpx;
+    margin-top: 40rpx;
+    box-shadow: 1px 1px 5px #999; 
+}
+.active{
+    background: #26B4FF;
+    color: #fff;
+}

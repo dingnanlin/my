@@ -1,0 +1,4 @@
+<!-- component/footer/footer.ttml -->
+<template name="header">
+  <text>{{msg}}</text>
+</template>

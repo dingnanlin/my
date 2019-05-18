@@ -1,0 +1,39 @@
+<view class="listPage" onPageScroll="scroll">   
+    <view class="header" :class="{{headerPosition?'headerPosition':'header'}}">
+        <my-component header-text="{{headerTitle}}"></my-component>
+    </view> 
+    <view class="content">
+        <view class="prolist" :class="{{boxPosition?'prolist boxPosition':'prolist'}}">
+            <view class="proItemBox" tt:for="{{listItem}}">
+                <view class="proItem" data-alpha-beta="{{item.title}}"  catchtap="clickNewList" :class="{{item.title==isClickde?'proItem active':'proItem'}}">
+                    {{item.title}}
+                </view>
+            </view>
+        </view>
+        <view class="proDelbox">
+            <view class="proDelItem"  tt:for="{{proList}}">
+                <view class="imageBox">
+                    <image src="{{item.imgUrl}}" mode=""/>
+                </view>
+                <view class="textBox">                    
+                    {{item.title}}                    
+                </view>
+            </view>
+            <view class="hotPro">
+                <view class="hotProItem" tt:for="{{proList}}" :class="{{index%2==0?'hotProItem':'hotProItem resive'}}">
+                    <view class="hotProItemText">
+                        <view class="hotProTitle">
+                            {{item.title}}
+                        </view>
+                        <view class="hotProText">
+                            {{item.text}}
+                        </view>
+                    </view>
+                    <view class="hotProItemImg">
+                        <image src="{{item.imgUrl}}" mode=""/>
+                    </view>
+                </view>
+            </view>
+        </view>
+    </view>     
+</view>

@@ -1,0 +1,4 @@
+<!-- pages/hellow/hellow.ttml -->
+<text>pages/hellow/hellow.ttml</text>
+<view bindtap="toHome">去首页看看吧</view>
+<view class="iconfont icon-qianbao"></view>

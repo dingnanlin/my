@@ -1,0 +1,59 @@
+<!-- 个人中心 -->
+<view class="personCenter">
+    <view class="header">
+        <view class="personInfo">
+            <view class="leftBox">
+                <view class="personImg">
+                    <image src="../../public/image/icon/person.png" mode="" />
+                </view>
+            </view>
+            <view class="rightBox">
+                <view class="personMsg">
+                    <view class="isLogin" tt:if="{{isLogin}}">
+                        <view class="userName">
+                            <view class="userNameIcon">
+                                <image src="../../public/image/icon/user.png" mode="" />
+                            </view>
+                            <view class="userNameText">
+                                张三
+                            </view>
+                        </view>
+                        <view class="userPhone">
+                            <view class="userPhoneIcon">
+                                <image src="../../public/image/icon/phone.png" mode="" />
+                            </view>
+                            <view class="userPhoneText">
+                                13009876432
+                            </view>
+                        </view>
+                    </view>
+                    <view class="noLogin" tt:else>
+                        <view>
+                            您还未登陆，请<navigator url="./login/login" hover-class="hover">登录！</navigator>                            
+                        </view>
+                    </view>
+                </view>
+            </view>
+        </view>
+    </view>
+    <view class="content" tt:if="{{isLogin}}">
+        <view class="iconGroupBox">
+            <view tt:for="{{operateList}}">
+                <view class="iconBtn" data-alpha-beta="{{index}}" catchtap="pressdown" :class="{{index==showOne? 'iconBtn active':'iconBtn'}}">
+                    <view :class="{{operateList[index].className}}"></view>
+                    <view class="iconText">{{operateList[index].title}}</view>
+                </view>
+            </view>
+        </view>
+        <!-- index.html -->
+        <!-- <import src="payWait.ttml"/>
+        <template is="payWait" data="{{...item}}"/> -->
+    </view>   
+    <view class="viewItem" tt:if="{{isLogin}}">
+        <my-paywait tt:if="{{showOne==0}}" show-list="{{showList}}"></my-paywait>
+        <my-goodswait tt:if="{{showOne==1}}" show-list="{{showList}}"></my-goodswait>   
+        <my-makewait tt:if="{{showOne==2}}" show-list="{{showList}}"></my-makewait> 
+        <my-appraisewait tt:if="{{showOne==3}}" show-list="{{showList}}"></my-appraisewait>
+        <view class="classname" tt:if="{{showOne==-1}}"></view> 
+    </view>
+</view>
