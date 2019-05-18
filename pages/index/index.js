@@ -13,6 +13,8 @@ Page({
     interval: 2000,
     duration: 500,
     headerPosition: false, 
+    moveperson:false,
+    firstList:[]
   },
   onLoad: function () {
     // tt.showLoading({
@@ -30,8 +32,22 @@ Page({
     //     task.abort();
     // }
   },
-  hellowWord: function (){
-    comment.hello("word");
+  // 页面到底的函数
+  onReachBottom(){
+    this.setData({
+      moveperson:true
+    }) 
+    var timer = setTimeout(()=>{
+      let that = this;
+      // console.log(that.data.showList);
+      var newArr = that.data.cardList.concat(that.data.firstList);
+      // console.log(newArr);
+      this.setData({
+        cardList:newArr,
+        moveperson:false
+      })
+      clearTimeout(timer);
+    },2000)
   },
   onPageScroll(e){
     let that = this;
@@ -79,7 +95,8 @@ Page({
           imgUrls:this.imgUrls
         })
         that.setData({
-          cardList:this.cardList
+          cardList:this.cardList,
+          firstList:this.cardList,
         })
     },    
     fail (res) {

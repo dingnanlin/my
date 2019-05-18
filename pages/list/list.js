@@ -7,11 +7,30 @@ Page({
     isClickde:"列表项一",
     proList:[],
     headerPosition:false,
-    boxPosition:false
+    boxPosition:false,
+    moveperson:false,
+    firstList:[]
   },
   onLoad: function (options) {
     this.getListItemTitle();
     this.getItemList("列表项一");
+  },
+  // 页面到底的函数
+  onReachBottom(){
+    this.setData({
+      moveperson:true
+    }) 
+    var timer = setTimeout(()=>{
+      let that = this;
+      // console.log(that.data.showList);
+      var newArr = that.data.proList.concat(that.data.firstList);
+      // console.log(newArr);
+      this.setData({
+        proList:newArr,
+        moveperson:false
+      })
+      clearTimeout(timer);
+    },2000)
   },
   getListItemTitle(){
     let that = this;
@@ -67,7 +86,8 @@ Page({
         console.log(res);
         this.proList = res.data;
         that.setData({
-          proList:this.proList
+          proList:this.proList,
+          firstList:this.proList
         })
     },    
     fail (res) {

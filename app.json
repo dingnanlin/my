@@ -5,8 +5,8 @@
     "pages/index/details/details",
     "pages/list/list",
     "pages/home/home",
-    "pages/home/login/login",
-    "pages/shoppingCar/shoppingCar"
+    "pages/home/login/login"
+   
   ],
   "window":{
     "backgroundTextStyle":"light",
@@ -30,12 +30,6 @@
       "text": "个人中心",
       "iconPath": "./public/image/icon/person.png",
       "selectedIconPath": "./public/image/icon/person1.png"
-    }, 
-     {
-      "pagePath": "pages/shoppingCar/shoppingCar",
-      "text": "购物车",
-      "iconPath": "./public/image/icon/shoppingcar.png",
-      "selectedIconPath": "./public/image/icon/shoppingcar1.png"
     }
     ]
   }

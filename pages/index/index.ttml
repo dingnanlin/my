@@ -11,7 +11,7 @@
         <block tt:for="{{imgUrls}}" class="swipetList">
           <swiper-item class="swiperItem">
             <view class="swiperitem">
-              <image src="{{item.imgUrl}}" mode="" title="item.title"/>
+              <image lazy-load="true" src="{{item.imgUrl}}" mode="" title="item.title"/>
             </view>
           </swiper-item>
         </block>
@@ -21,7 +21,7 @@
     <view class="cardBox" tt:for="{{cardList}}" data-alpha-beta="{{item.pid}}" bindtap="toDetails">
       <view class="cardItem">
         <view class="imgBox">
-          <image src="{{item.imgUrl}}" mode="" />
+          <image lazy-load="true" src="{{item.imgUrl}}" mode="" />
         </view>
         <view class="textBox">
           <text class="proTitle">{{item.title}}</text>
@@ -30,5 +30,8 @@
         </view>
       </view>
     </view>
+  </view>
+  <view class="loadingBox" tt:if="{{moveperson}}">
+      <image lazy-load="true" src="../../public/image/icon/loading.jpg" mode="" />
   </view>
 </view> 

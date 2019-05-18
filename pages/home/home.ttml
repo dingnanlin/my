@@ -4,7 +4,7 @@
         <view class="personInfo">
             <view class="leftBox">
                 <view class="personImg">
-                    <image src="../../public/image/icon/person.png" mode="" />
+                    <image lazy-load="true" src="../../public/image/icon/person.png" mode="" />
                 </view>
             </view>
             <view class="rightBox">
@@ -12,7 +12,7 @@
                     <view class="isLogin" tt:if="{{isLogin}}">
                         <view class="userName">
                             <view class="userNameIcon">
-                                <image src="../../public/image/icon/user.png" mode="" />
+                                <image lazy-load="true" src="../../public/image/icon/user.png" mode="" />
                             </view>
                             <view class="userNameText">
                                 张三
@@ -20,7 +20,7 @@
                         </view>
                         <view class="userPhone">
                             <view class="userPhoneIcon">
-                                <image src="../../public/image/icon/phone.png" mode="" />
+                                <image lazy-load="true" src="../../public/image/icon/phone.png" mode="" />
                             </view>
                             <view class="userPhoneText">
                                 13009876432
@@ -53,7 +53,27 @@
         <my-paywait tt:if="{{showOne==0}}" show-list="{{showList}}"></my-paywait>
         <my-goodswait tt:if="{{showOne==1}}" show-list="{{showList}}"></my-goodswait>   
         <my-makewait tt:if="{{showOne==2}}" show-list="{{showList}}"></my-makewait> 
-        <my-appraisewait tt:if="{{showOne==3}}" show-list="{{showList}}"></my-appraisewait>
-        <view class="classname" tt:if="{{showOne==-1}}"></view> 
+        <my-appraisewait tt:if="{{showOne==3}}" show-list="{{showList}}"></my-appraisewait> 
+        <view class="loadingBox" tt:if="{{showOne!=-1 && moveperson}}">
+            <image lazy-load="true" src="../../public/image/icon/loading.jpg" mode="" />
+        </view>
+    </view>
+    <view class="recommend" tt:if="{{showOne==-1}}" :class="{{isLogin?'recommend':'recommend marginTop'}}">
+        <view class="recommendTitle">
+            好货推荐
+        </view>
+        <view class="recommendBox">
+            <view class="recommendItem" tt:for="{{showList}}">
+                <view class="imgBox">
+                    <image lazy-load="true" src="{{item.imgUrl}}" mode="" />
+                </view>
+                <view class="titleBox">
+                    {{item.title}}
+                </view>
+                <view class="priceBox">
+                    ￥{{item.price}}
+                </view>
+            </view>
+        </view>            
     </view>
 </view>

@@ -13,7 +13,7 @@
         <view class="proDelbox">
             <view class="proDelItem"  tt:for="{{proList}}">
                 <view class="imageBox">
-                    <image src="{{item.imgUrl}}" mode=""/>
+                    <image lazy-load="true" src="{{item.imgUrl}}" mode=""/>
                 </view>
                 <view class="textBox">                    
                     {{item.title}}                    
@@ -30,10 +30,13 @@
                         </view>
                     </view>
                     <view class="hotProItemImg">
-                        <image src="{{item.imgUrl}}" mode=""/>
+                        <image lazy-load="true" src="{{item.imgUrl}}" mode=""/>
                     </view>
                 </view>
             </view>
         </view>
-    </view>     
+    </view>   
+    <view class="loadingBox" tt:if="{{moveperson}}">
+      <image lazy-load="true" src="../../public/image/icon/loading.jpg" mode="" />
+    </view>  
 </view>

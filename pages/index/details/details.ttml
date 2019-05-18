@@ -1,7 +1,7 @@
 <!-- pages/details/details.ttml -->
 <view class="proInfoPage">
     <view class="proImgBox">
-        <image src="{{proInfo.imgUrl}}" mode="" />
+        <image lazy-load="true" src="{{proInfo.imgUrl}}" mode="" />
     </view>
     <view class="proTextBox">
         <view class="proTextTitle">
@@ -31,7 +31,7 @@
         <view class="settle">
             <view class="carBox">
                 <view class="carIcon" :class="{{carColor==1?'carIcon blueColor':'carIcon'}}">
-                    <image src="../../../public/image/icon/shoppingcar.png" mode="" />
+                    <image lazy-load="true" src="../../../public/image/icon/shoppingcar.png" mode="" />
                     <view class="numIcon" tt:if="{{numbers>0}}">
                         {{numbers}}
                     </view>

@@ -1,4 +1,13 @@
-<!-- pages/hellow/hellow.ttml -->
-<text>pages/hellow/hellow.ttml</text>
-<view bindtap="toHome">去首页看看吧</view>
-<view class="iconfont icon-qianbao"></view>
+
+<view  class="Hellow" style="background:url({{bgList.imgUrl}});background-size: 100% 100%">
+    <view class="maskBox">
+        <view class="timersBox">
+            <view class="timers">
+                <view class="timeNum">{{time}}</view>秒后去首页
+            </view>
+        </view>
+        <view class="textBox">
+            {{bgList.text}}
+        </view>
+    </view>
+</view>

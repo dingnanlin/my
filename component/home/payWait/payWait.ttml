@@ -1,7 +1,7 @@
 <view class="payWaitBox">
   <view tt:for="{{showList}}" class="payWaitItem">
     <view class="payWaitImage">
-      <image src="{{item.imgUrl}}" mode="" />
+      <image lazy-load="true" src="{{item.imgUrl}}" mode="" />
     </view>
     <view class="payWaitContent">
       <view class="payWaitTitle">

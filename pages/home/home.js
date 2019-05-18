@@ -1,7 +1,6 @@
 // pages/home/home.js
 Page({
   data: {
-    msg:"这是个人中心",
     text:"",
     welcome:[],
     isLogin:true,
@@ -25,98 +24,84 @@ Page({
       }
     ],
     showDataList:[],
-    showList:[],    
+    showList:[],
+    firstList:[],
+    moveperson:false,    
   },
+  // 生命周期函数--监听页面加载
   onLoad: function (options) {
-    console.log("个人中心");
-    this.handData();
+    // console.log("个人中心");
     this.findData("张三");
   },
-  handData : function(){
-    let that = this;
-    let task = tt.request({
-    url: 'http://localhost:4000/users',
-    // data: {
-    //     user_name: 'hello'
-    // },
-    header: {
-        'content-type':'application/json'
-    },
-    success (res) {
-        console.log(`request调用成功 ${res}`);
-        // console.log(res);   
-        this.text=res.data;
-        // console.log(tt.text);
-        that.setData({
-          text:this.text
-        })
-    },    
-    fail (res) {
-        console.log(`request调用失败`);
-      }
-    });
-    // if (someReason) {
-    //     task.abort();
-    // }
+  // 生命周期函数--监听页面初次渲染完成
+  onReady(){
+    this.oneSetData();
   },
-  handHello: function(){
-    let that = this;
-    let task = tt.request({
-    url: 'http://localhost:4000/hello',
-    // data: {
-    //     user_name: 'hello'
-    // },
-    header: {
-        'content-type':'application/json'
-    },
-    success (res) {
-        console.log(`request调用成功 ${res}`);
-        console.log(res.data);   
-        this.welcome=res.data;
-        that.setData({
-          welcome:this.welcome
+  // 当前是 tab 页时，点击 tab 时触发
+  onHide(){
+    let that = this
+    this.setData({
+      showOne:-1
+    })   
+    this.oneSetData();
+  },
+  // 页面到底的函数
+  onReachBottom(){
+    if(this.data.showOne!=-1){
+      this.setData({
+        moveperson:true
+      }) 
+      var timer = setTimeout(()=>{
+        let that = this;
+        // console.log(that.data.showList);
+        var newArr = that.data.showList.concat(that.data.firstList);
+        console.log(newArr);
+        this.setData({
+          showList:newArr,
+          moveperson:false
         })
-    },    
-    fail (res) {
-        console.log(`request调用失败`);
-      }
-    });
-    
+        clearTimeout(timer);
+      },2000)
+    }
   },
   // 按钮按下的功能
   pressdown(event){
     let that = this;
     var keyWods = event.currentTarget.dataset.alphaBeta;  
-    console.log(keyWods);
+    // console.log(keyWods);
     if(keyWods==0){
       var list = that.data.showDataList[0];
       // list = JSON.stringify(list);
       that.setData({
         showOne:keyWods,
-        showList:list
+        showList:list,
+        firstList:list
       })
       // console.log(that.data.showList);
     }else if(keyWods==1){
       var list = that.data.showDataList[1];
       that.setData({
         showOne:keyWods,
-        showList:list
+        showList:list,
+        firstList:list
       })
       // console.log(that.data.showList);
     }else if(keyWods==2){
       var list = that.data.showDataList[2];
       that.setData({
         showOne:keyWods,
-        showList:list
+        showList:list,
+        firstList:list
       })
       // console.log(that.data.showList);
     }else if(keyWods==3){
       var list = that.data.showDataList[3];
       that.setData({
         showOne:keyWods,
-        showList:list
+        showList:list,
+        firstList:list
       })
-      console.log(that.data.showList);
+      // console.log(that.data.showList);
     }     
   },
   // 查询数据的方法
@@ -139,5 +124,15 @@ Page({
         console.log(`request调用失败`);
       }
     });
+  },
+  //第一次数据加载的方法
+  oneSetData(){
+    let that = this
+    // console.log(this.data.showDataList)
+    var list = this.data.showDataList[4];
+    this.setData({
+      showList:list
+    })
+    // console.log(that.data.showList);
   }
 })
