@@ -2,10 +2,12 @@
   "pages":[
     "pages/hellow/hellow",
     "pages/index/index",
-    "pages/index/details/details",
+    "pages/details/details",
     "pages/list/list",
     "pages/home/home",
-    "pages/home/login/login"
+    "pages/home/login/login",
+    "pages/logisticsTracking/loginTrack",
+    "pages/evaluationDetails/evaluationDetails"
    
   ],
   "window":{

@@ -4,14 +4,14 @@
     </view> 
     <view class="content">
         <view class="prolist" :class="{{boxPosition?'prolist boxPosition':'prolist'}}">
-            <view class="proItemBox" tt:for="{{listItem}}">
+            <view class="proItemBox" tt:for="{{prolist}}">
                 <view class="proItem" data-alpha-beta="{{item.title}}"  catchtap="clickNewList" :class="{{item.title==isClickde?'proItem active':'proItem'}}">
                     {{item.title}}
                 </view>
             </view>
         </view>
         <view class="proDelbox">
-            <view class="proDelItem"  tt:for="{{proList}}">
+            <view class="proDelItem"  tt:for="{{topList}}"  data-alpha-beta="{{item.pid}}" bindtap="toDetails">
                 <view class="imageBox">
                     <image lazy-load="true" src="{{item.imgUrl}}" mode=""/>
                 </view>
@@ -20,7 +20,7 @@
                 </view>
             </view>
             <view class="hotPro">
-                <view class="hotProItem" tt:for="{{proList}}" :class="{{index%2==0?'hotProItem':'hotProItem resive'}}">
+                <view class="hotProItem" tt:for="{{proList}}" :class="{{index%2==0?'hotProItem':'hotProItem resive'}}" data-alpha-beta="{{item.pid}}" bindtap="toDetails">
                     <view class="hotProItemText">
                         <view class="hotProTitle">
                             {{item.title}}

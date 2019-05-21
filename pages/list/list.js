@@ -6,6 +6,7 @@ Page({
     listItem:[],
     isClickde:"列表项一",
     proList:[],
+    topList:[],
     headerPosition:false,
     boxPosition:false,
     moveperson:false,
@@ -43,15 +44,15 @@ Page({
         'content-type':'application/json'
     },
     success (res) {
-        console.log(`request调用成功 ${res}`);
-        console.log(res);
+        // console.log(`request调用成功 ${res}`);
+        // console.log(res);
         this.listItem = res.data;
         that.setData({
           listItem:this.listItem
         })
     },    
     fail (res) {
-        console.log(`request调用失败`);
+        // console.log(`request调用失败`);
       }
     });
     // if (someReason) {
@@ -63,12 +64,12 @@ Page({
     let that = this;    
     var itemIndex = event.currentTarget.dataset.alphaBeta;
     this.isClickde = itemIndex;
-    console.log(this.isClickde);
+    // console.log(this.isClickde);
     that.setData({
       isClickde:this.isClickde
     })
     this.getItemList(this.isClickde); 
-    console.log(this.isClickde) ;  
+    // console.log(this.isClickde) ;  
   }, 
   // 发送请求获取数据
   getItemList(title){
@@ -82,16 +83,17 @@ Page({
         'content-type':'application/json'
     },
     success (res) {
-        console.log(`request调用成功 ${res}`);
-        console.log(res);
+        // console.log(`request调用成功 ${res}`);
+        // console.log(res);
         this.proList = res.data;
         that.setData({
           proList:this.proList,
-          firstList:this.proList
+          firstList:this.proList,
+          topList:this.proList,
         })
     },    
     fail (res) {
-        console.log(`request调用失败`);
+        // console.log(`request调用失败`);
       }
     });
     // if (someReason) {
@@ -111,5 +113,19 @@ Page({
         boxPosition:false
       })
     }
+  },
+  // 去详情页
+  toDetails(event){
+    console.log(event.currentTarget.dataset.alphaBeta);
+    tt.navigateTo ({
+      url: '../../pages/details/details?title='+event.currentTarget.dataset.alphaBeta, // 指定页面的url      
+      success: function(res){
+        // console.log("跳转成功！")
+        // console.log(url);
+      },
+      fail: function(res) {
+        console.log("跳转失败！")
+      },
+    })
   }
 })

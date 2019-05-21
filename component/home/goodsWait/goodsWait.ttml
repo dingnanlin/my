@@ -16,7 +16,7 @@
         </view>
       </view>
       <view class="itemBoxRight">
-        <view class="lookDetail"> 查看详情 </view>
+        <view class="lookDetail" data-alpha-beta="{{item.carId}}" bindtap="toLoginTrack"> 查看详情 </view>
       </view>                  
     </view>
   </view>

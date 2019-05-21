@@ -3,7 +3,7 @@
     <view class="maskBox">
         <view class="timersBox">
             <view class="timers">
-                <view class="timeNum">{{time}}</view>秒后去首页
+                <view class="timeNum">{{timeNum}}</view>秒后去首页
             </view>
         </view>
         <view class="textBox">

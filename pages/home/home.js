@@ -8,7 +8,7 @@ Page({
     operateList:[
       {
         title:"待付款",
-        className:"iconImg iconfont icon-qianbao"
+        className:"iconImg iconfont icon-daifukuan"
       },
       {
         title:"待收货",
@@ -20,7 +20,7 @@ Page({
       },
       {
         title:"待评价",
-        className:"iconImg iconfont icon-daipingjia"
+        className:"iconImg iconfont icon-icondaipingjia"
       }
     ],
     showDataList:[],
@@ -46,7 +46,8 @@ Page({
     this.oneSetData();
   },
   // 页面到底的函数
-  onReachBottom(){
+  onReachBottom(e){
+    console.log(e);
     if(this.data.showOne!=-1){
       this.setData({
         moveperson:true
@@ -55,7 +56,7 @@ Page({
         let that = this;
         // console.log(that.data.showList);
         var newArr = that.data.showList.concat(that.data.firstList);
-        console.log(newArr);
+        // console.log(newArr);
         this.setData({
           showList:newArr,
           moveperson:false
@@ -121,7 +122,7 @@ Page({
         })
     },    
     fail (res) {
-        console.log(`request调用失败`);
+        console.log(`获取数据失败！`);
       }
     });
   },
@@ -134,5 +135,20 @@ Page({
       showList:list
     })
     // console.log(that.data.showList);
+  },
+  // 去详情页
+  toDetails(event){
+    console.log(this.data.showList);
+    console.log(event.currentTarget.dataset.alphaBeta);
+    tt.navigateTo ({
+      url: '../../pages/details/details?title='+event.currentTarget.dataset.alphaBeta, // 指定页面的url      
+      success: function(res){
+        // console.log("跳转成功！")
+        // console.log(url);
+      },
+      fail: function(res) {
+        console.log("跳转失败！")
+      },
+    })
   }
 })

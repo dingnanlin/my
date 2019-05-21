@@ -20,7 +20,7 @@
         <view class="agrinOrder">
           再来一单
         </view>
-        <view class="toApprais">
+        <view class="toApprais" data-alpha-beta="{{item.orderId}}" bindtap="toEvaluationDetails">
           去评价
         </view>
       </view>

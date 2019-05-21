@@ -1,36 +1,44 @@
 // pages/hellow/hellow.js
 Page({
   data: {
-      time:3,
+      timer:'',
+      timeNum:'1',
       bgList:{},
   },
   onLoad: function (options) {
-    //   this.toHome();
       this.findList();
-    //   this.timer();
       let that = this;
-    //   console.log(this.data.time);
-    //     var timer = setInterval(()=>{
-    //         var thisTimer = this.data.time--;
-    //         console.log(thisTimer);
-    //         this.setData({
-    //             time:thisTimer
-    //         })
-    //     },1000)
+      this.countDown();
   },
   toHome: function (){
     var timer = setTimeout(()=>{
-        tt.reLaunch({
-            url: `/pages/index/index`,
-            success (res) {
-                console.log(`${res}`);
-            },
-            fail (res) {
-                console.log(`reLaunch调用失败`);
-            }
-        });
+        
         clearTimeout(timer);
     },3000)
+  },
+  countDown:function(){
+      let that = this;
+      let timeNum = that.data.timeNum;
+      that.setData({
+          timer:setInterval(()=>{
+              timeNum--;
+              that.setData({
+                  timeNum:timeNum
+              })
+              if(timeNum == 0){
+                  clearInterval(that.data.timer);
+                  tt.reLaunch({
+                    url: `/pages/index/index`,
+                    success (res) {
+                        // console.log(`${res}`);
+                    },
+                    fail (res) {
+                        // console.log(`reLaunch调用失败`);
+                    }
+                });
+              }
+          },1000)
+      })
   },
     // 请求数据
         findList(){
@@ -54,7 +62,7 @@ Page({
                 })
             },    
             fail (res) {
-                console.log(`request调用失败`);
+                console.log(`请求数据失败！`);
             }
         });
     }

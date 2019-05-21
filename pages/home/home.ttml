@@ -63,7 +63,7 @@
             好货推荐
         </view>
         <view class="recommendBox">
-            <view class="recommendItem" tt:for="{{showList}}">
+            <view class="recommendItem" tt:for="{{showList}}" data-alpha-beta="{{item.pid}}" bindtap="toDetails">
                 <view class="imgBox">
                     <image lazy-load="true" src="{{item.imgUrl}}" mode="" />
                 </view>

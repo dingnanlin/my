@@ -64,14 +64,16 @@ Page({
   // 去详情页
   toDetails(e){
     var title = e.currentTarget.dataset.alphaBeta;
-    console.log(title);
-    tt.navigateTo({
-      url: 'details/details?title='+title, // 指定页面的url
+    // console.log(e);
+    tt.navigateTo ({
+      url: '../../pages/details/details?title='+title, // 指定页面的url      
       success: function(res){
-        console.log("跳转成功！")
+        // console.log("跳转成功！")
+        // console.log(url);
       },
       fail: function(res) {
-        console.log(res);
+        // console.log(res);
+        // console.log(url);
       },
     })  
   },
@@ -87,8 +89,8 @@ Page({
         'content-type':'application/json'
     },
     success (res) {
-        console.log(`request调用成功 ${res}`);
-        console.log(res.data[1]);   
+        // console.log(`request调用成功 ${res}`);
+        // console.log(res.data[1]);   
         this.imgUrls=res.data[1];
         this.cardList=res.data[2];
         that.setData({
@@ -100,7 +102,7 @@ Page({
         })
     },    
     fail (res) {
-        console.log(`request调用失败`);
+        // console.log(`request调用失败`);
       }
     });
   },
